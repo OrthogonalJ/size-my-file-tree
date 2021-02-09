@@ -1,0 +1,11 @@
+.header-container {
+  margin: 10px 0;
+}
+
+.file-table-row-child-table-cell {
+  border-bottom: none !important;
+}
+
+.sort-indicator-icon.decending {
+  transform: scaleY(-1);
+}

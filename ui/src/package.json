@@ -1,0 +1,14 @@
+{
+  "name": "file-tree-sizer-ui",
+  "productName": "file-tree-sizer-ui",
+  "version": "0.0.1",
+  "description": "A file tree sizer",
+  "main": "./main.prod.js",
+  "author": "",
+  "scripts": {
+    "electron-rebuild": "node -r ../.erb/scripts/BabelRegister.js ../.erb/scripts/ElectronRebuild.js",
+    "postinstall": "yarn electron-rebuild"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}
