@@ -4,3 +4,9 @@ build
 
 # Editor configs
 .vscode
+
+
+# Env specific setup scripts
+setup_env.local.bat
+setup_env.local.sh
+setup_env.local.ps1
