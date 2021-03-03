@@ -3,6 +3,11 @@ export enum SortDirection {
   Descending
 }
 
+export function sortObjectArrayByKey(array: any[], sortKey: string, sortDirection: SortDirection) {
+  const compareFn = makeSortByKeyComparer(sortKey, sortDirection);
+  array.sort(compareFn);
+}
+
 function makeSortByKeyComparer(sortKey: string, sortDirection: SortDirection): (val1: any, val2: any) => number {
   const compareFn = (val1: any, val2: any): number => {
     let comparison;
@@ -20,9 +25,4 @@ function makeSortByKeyComparer(sortKey: string, sortDirection: SortDirection): (
     return comparison;
   };
   return compareFn;
-}
-
-export function sortObjectArrayByKey(array: any[], sortKey: string, sortDirection: SortDirection) {
-  const compareFn = makeSortByKeyComparer(sortKey, sortDirection);
-  array.sort(compareFn);
 }

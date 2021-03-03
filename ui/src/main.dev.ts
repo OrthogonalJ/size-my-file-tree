@@ -107,12 +107,10 @@ app.on('window-all-closed', async () => {
   }
 });
 
-app.whenReady()
-  .then(async () => {
-    await FileTreeServerManager.start();
-    await createWindow();
-  })
-  .catch(console.log);
+app.whenReady().then(async () => {
+  await FileTreeServerManager.start();
+  await createWindow();
+}).catch(console.log);
 
 app.on('activate', () => {
   // On macOS it's common to re-create a window in the app when the

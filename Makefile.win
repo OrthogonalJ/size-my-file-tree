@@ -1,0 +1,18 @@
+#### MACROS ####
+
+TRAVERSER_EXE=ui/src/dist/traverser/__main__.exe
+TRAVERSER_BUILD_DIR=build/traverser
+UI_DIST_DIR=ui/src/dist
+
+#### RECIPES ####
+
+all: ui traverser
+
+traverser: $(TRAVERSER_EXE)
+
+$(TRAVERSER_EXE): traverser/__main__.py traverser/__init__.py
+	pyinstaller ./traverser/__main__.py --onefile --clean --distpath $(UI_DIST_DIR)/traverser --workpath $(TRAVERSER_BUILD_DIR) --specpath $(TRAVERSER_BUILD_DIR)
+
+ui: traverser
+	cd ui
+	yarn package

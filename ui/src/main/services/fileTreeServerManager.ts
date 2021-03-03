@@ -39,10 +39,10 @@ export class FileTreeServerManager {
         });
       }
 
-      this.proc?.kill();
+      this.proc?.disconnect();
+    }).then(() => {
+      this.proc = null;
     });
-
-    this.proc = null;
   }
 
   private static createServerProcess(): ChildProcess {
